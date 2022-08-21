@@ -9,12 +9,29 @@
 // InternalError.
 // User Define Error 
 
+
+//Import Error Handler Code in another File  Default Exports
+// const errorHandler = require("./errorHandler.js");
+
+// Named Exports 
+const { two ,errorHandler } = require("./errorHandler.js"); // => Common js Module import 
+two();
+
+// import something from " somethig " => ES6 Module 
+/* 
+    jodi package.json file a 
+    "type": "module",
+    hoi tile amra
+    
+    import something from " something " -> use krte parbo 
+*/
+
 async function getData(){
     try{    
 
         // undefined.find();
         
-        const emailError = new Error("Email Already Exites ! ");
+        const emailError = new Error("Email Already Exites");
         throw emailError;       
 
     }catch ( error ){
@@ -25,22 +42,22 @@ async function getData(){
 getData();
 
 //Global Error Handler       
-function errorHandler( error ){
-    // console.log(error);
-    const { name , massage , stack } = error;
-    // console.log( name );
-    // console.log(massage);
-    // console.log(stack);
+// function errorHandler( error ){
+//     // console.log(error);
+//     const { name , massage , stack } = error;
+//     // console.log( name );
+//     // console.log(massage);
+//     // console.log(stack);
 
-    // logger.error( {
-    //     name,
-    //     massage,
-    //     stack,
-    //     route,
-    // });
+//     // logger.error( {
+//     //     name,
+//     //     massage,
+//     //     stack,
+//     //     route,
+//     // });
 
-    // console.log("Internal Server Error ! ");
-    console.log(name, massage );
-}
+//     // console.log("Internal Server Error ! ");
+//     console.log(name, massage );
+// }
 
 console.log("Done !");
