@@ -8,5 +8,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "node": "^18.9.0",
+    "underscore": "^1.13.4"
+  }
 }
