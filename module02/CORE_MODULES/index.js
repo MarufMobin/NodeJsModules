@@ -55,7 +55,28 @@
 const http = require('http');
 
 const server = http.createServer( ( req, res )=>{
-        res.end('Hello Dev World')
+        // res.end('Hello Dev World')
+        // console.log(req.url)
+        if(  req.url == '/'   ){
+                res.writeHead(200, {'Content-type' : 'application/json'});
+                res.write(JSON.stringify({course: "ACC"}));
+                res.end();
+        }
+        // if(  req.url == '/'   ){
+        //         res.writeHead(200, {'Content-type' : 'text/html'});
+        //         res.write('<h1 style="text-align: center; margin-top : 200px;"> This is Home Page <h1>');
+        //         res.end();
+        // }
+       else if(  req.url == '/about'   ){
+                res.writeHead(200, {'Content-type' : 'text/html'});
+                res.write('<h1 style="text-align: center; margin-top : 200px;"> This is about Page <h1>');
+                res.end();
+        }
+       else if(  req.url == '/contact'   ){
+                res.writeHead(200, {'Content-type' : 'text/html'});
+                res.write('<h1 style="text-align: center; margin-top : 200px;"> This is Contact Page <h1>');
+                res.end();
+        }
 })
 const PORT = 5000;
 server.listen(PORT);
